@@ -13,6 +13,9 @@ This is a Course Materials RAG (Retrieval-Augmented Generation) System - a full-
 # Install dependencies
 uv sync
 
+# Install development dependencies (includes code quality tools)
+uv sync --extra dev
+
 # Set up environment variables (create .env with ANTHROPIC_API_KEY)
 cp .env.example .env
 # Then edit .env with your actual Anthropic API key
@@ -31,6 +34,29 @@ cd backend && uv run uvicorn app:app --reload --port 8000
 ### Development URLs
 - Web Interface: `http://localhost:8000`
 - API Documentation: `http://localhost:8000/docs`
+
+### Code Quality Tools
+```bash
+# Format code with black and isort
+./format.sh
+
+# Run linting checks with flake8
+./lint.sh
+
+# Run type checking with mypy
+./type-check.sh
+
+# Run all quality checks (format check, lint, type check)
+./check.sh
+```
+
+**Development tools included:**
+- **black**: Code formatter with 100 character line length
+- **isort**: Import statement organizer (configured for black compatibility)
+- **flake8**: Linting tool for code quality checks
+- **mypy**: Static type checker for Python
+
+**Configuration:** All tools are configured in `pyproject.toml` with project-specific settings.
 
 ## Architecture Overview
 
