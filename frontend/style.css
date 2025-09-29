@@ -64,10 +64,15 @@ body {
     padding: 0;
 }
 
-/* Header - Hidden */
+/* Header - Invisible but present for theme toggle */
 header {
-    display: none;
+    display: block;
     position: relative;
+    background-color: var(--background);
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+    height: 60px;
 }
 
 header h1 {
@@ -78,12 +83,14 @@ header h1 {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin: 0;
+    visibility: hidden;
 }
 
 .subtitle {
     font-size: 0.95rem;
     color: var(--text-secondary);
     margin-top: 0.5rem;
+    visibility: hidden;
 }
 
 /* Theme Toggle Button */
